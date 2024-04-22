@@ -1,0 +1,97 @@
+.layout {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  border-bottom: 1px solid #ffffff;
+  background-color: #000000;
+  z-index: 10;
+
+  &__logo {
+    width: 240px;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #ffffff;
+  }
+
+  &__progress {
+    flex: 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+    button {
+      border: none;
+      padding: 0;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+
+  &__pre-reserve {
+    width: 240px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-wrap: nowrap;
+    box-sizing: border-box;
+    background-color: #000;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    gap: 6px;
+    padding: 0 60px;
+    border: none;
+    border-left: 1px solid #fff;
+    transition: 0.2s linear;
+    cursor: pointer;
+
+    svg {
+      width: 14px;
+      height: auto;
+      flex-shrink: 0;
+      fill: #fff;
+    }
+
+    &:hover {
+      background-color: #fff;
+      color: #000;
+
+      svg {
+        fill: #000;
+      }
+    }
+  }
+}
+
+.progress {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+
+  &--now {
+    background-color: #ffffff;
+  }
+}
+
+.content {
+  display: flex;
+  box-sizing: border-box;
+}
