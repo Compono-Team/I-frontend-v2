@@ -1,5 +1,5 @@
-import { ReactComponent as LogoIcon } from 'assets/svg/Logo/logo.svg';
-import { ReactComponent as ArrowIcon } from 'assets/svg/common/arrow_right.svg';
+import LogoIcon from 'assets/svg/Logo/logo.svg?react';
+import ArrowIcon from 'assets/svg/common/arrow_right.svg?react';
 import FirstPage from 'pages/Landing/components/FirstPage/FirstPage';
 import { useEffect, useRef, useState } from 'react';
 import cn from 'utils/ts/className';

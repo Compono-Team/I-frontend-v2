@@ -1,6 +1,6 @@
-import { ReactComponent as Logo } from 'assets/svg/Logo/logo.svg';
-import { ReactComponent as Arrow } from 'assets/svg/common/arrow_right.svg';
-import { ReactComponent as LogoPhrase } from 'assets/svg/Logo/logo_phrase.svg';
+import Logo from 'assets/svg/Logo/logo.svg?react';
+import Arrow from 'assets/svg/common/arrow_right.svg?react';
+import LogoPhrase from 'assets/svg/Logo/logo_phrase.svg?react';
 import PhoneLeft from 'assets/image/Landing/phone_left.png';
 import PhoneRight from 'assets/image/Landing/phone_right.png';
 import styles from './FirstPage.module.scss';

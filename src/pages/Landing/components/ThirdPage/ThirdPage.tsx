@@ -1,4 +1,4 @@
-import { ReactComponent as Third } from 'assets/svg/Landing/xyz.svg';
+import Third from 'assets/svg/Landing/xyz.svg?react';
 import styles from './ThirdPage.module.scss';
 
 export default function ThirdPage() {

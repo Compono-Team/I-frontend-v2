@@ -1,4 +1,4 @@
-import { ReactComponent as Cordinate } from 'assets/svg/Landing/xyz.svg';
+import Cordinate from 'assets/svg/Landing/xyz.svg?react';
 import styles from './SecondPage.module.scss';
 
 export default function SecondPage() {
