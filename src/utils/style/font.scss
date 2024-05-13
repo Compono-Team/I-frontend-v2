@@ -1,7 +1,4 @@
 @use "./fontFace.scss";
-@include fontFace.font-face("Archivo", "/assets/font/Archivo/Archivo-Bold", 700);
-@include fontFace.font-face("Archivo", "/assets/font/Archivo/Archivo-SemiBold", 600);
-@include fontFace.font-face("Archivo", "/assets/font/ArchivoBlack-Regular", 500);
 
 @include fontFace.font-face("Pretendard", "/assets/font/Pretendard/Pretendard-Regular", 400);
 @include fontFace.font-face("Pretendard", "/assets/font/Pretendard/Pretendard-Medium", 500);
@@ -9,3 +6,10 @@
 @include fontFace.font-face("Pretendard", "/assets/font/Pretendard/Pretendard-SemiBold", 600);
 @include fontFace.font-face("Pretendard", "/assets/font/Pretendard/Pretendard-ExtraBold", 800);
 @include fontFace.font-face("Pretendard", "/assets/font/Pretendard/Pretendard-Black", 900);
+
+@include fontFace.font-face("DMSans", "/assets/font/DMSans/DMSans-Regular", 400);
+@include fontFace.font-face("DMSans", "/assets/font/DMSans/DMSans-Medium", 500);
+@include fontFace.font-face("DMSans", "/assets/font/DMSans/DMSans-Bold", 700);
+@include fontFace.font-face("DMSans", "/assets/font/DMSans/DMSans-SemiBold", 600);
+@include fontFace.font-face("DMSans", "/assets/font/DMSans/DMSans-ExtraBold", 800);
+@include fontFace.font-face("DMSans", "/assets/font/DMSans/DMSans-Black", 900);

@@ -1,119 +1,137 @@
 import LogoIcon from 'assets/svg/Logo/logo.svg?react';
 import ArrowIcon from 'assets/svg/common/arrow_right.svg?react';
 import FirstPage from 'pages/Landing/components/FirstPage/FirstPage';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import cn from 'utils/ts/className';
 import styles from './Landing.module.scss';
 import SecondPage from './components/SecondPage/SecondPage';
 import ThirdPage from './components/ThirdPage/ThirdPage';
+import ForthPage from './components/ForthPage/ForthPage';
+import Reward from './components/Reward';
 
 export default function Landing() {
   const [section, setSection] = useState(0);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<number>(0);
-
-  const handleSection = (value: number) => {
-    const content = contentRef.current;
-    sectionRef.current = value;
-    setSection(value);
-    if (content)content.scrollLeft = window.innerWidth * value;
-  };
 
   useEffect(() => {
-    const content = contentRef?.current;
-    let isMoving = false;
-
-    const handleWheel = (e:WheelEvent) => {
-      if (!isMoving && content && e.deltaY > 0) {
-        isMoving = true;
-        sectionRef.current = sectionRef.current === 5 ? 5 : sectionRef.current + 1;
-        setSection(sectionRef.current);
-        content.scrollLeft = window.innerWidth * sectionRef.current;
-        setTimeout(() => { isMoving = false; }, 1000);
-      }
-
-      if (!isMoving && content && e.deltaY < 0) {
-        isMoving = true;
-        sectionRef.current = sectionRef.current === 0 ? 0 : sectionRef.current - 1;
-        setSection(sectionRef.current);
-        content.scrollTo({ left: window.innerWidth * sectionRef.current, behavior: 'smooth' });
-        setTimeout(() => { isMoving = false; }, 1000);
-      }
+    const handleScroll = () => {
+      setSection(Math.round((window.scrollY / window.innerHeight) * 100) / 100);
     };
 
-    window.addEventListener('wheel', handleWheel);
-
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
-    <div className={styles.layout} ref={contentRef}>
-      <div className={styles.header}>
+    <div className={styles.layout}>
+      <div
+        className={styles.header}
+        style={{ opacity: section >= 1 ? 1 : 0 }}
+      >
         <div className={styles.header__logo}>
           <LogoIcon />
         </div>
-        <div className={styles.header__progress}>
-          <button type="button" onClick={() => handleSection(0)}>
-            <div className={cn({
+        <div
+          className={styles.header__progress}
+        >
+          <button
+            className={cn({
               [styles.progress]: true,
-              [styles['progress--now']]: section === 0,
+              [styles['progress--now']]: section < 1,
             })}
-            />
+            type="button"
+            onClick={() => window.scrollTo({ top: 0 })}
+          >
+            HOME
           </button>
-          <button type="button" onClick={() => handleSection(1)}>
-            <div className={cn({
+          <button
+            className={cn({
               [styles.progress]: true,
-              [styles['progress--now']]: section === 1,
+              [styles['progress--selected']]: section >= 1 && section < 2,
             })}
-            />
+            type="button"
+            onClick={() => window.scrollTo({ top: window.innerHeight * 1 })}
+          >
+            ABOUT
           </button>
-          <button type="button" onClick={() => handleSection(2)}>
-            <div className={cn({
+          <button
+            className={cn({
               [styles.progress]: true,
-              [styles['progress--now']]: section === 2,
+              [styles['progress--selected']]: section >= 2 && section < 3,
             })}
-            />
+            type="button"
+            onClick={() => window.scrollTo({ top: window.innerHeight * 2 })}
+          >
+            FUNCTION
           </button>
-          <button type="button" onClick={() => handleSection(3)}>
-            <div className={cn({
+          <button
+            className={cn({
               [styles.progress]: true,
-              [styles['progress--now']]: section === 3,
+              [styles['progress--selected']]: section >= 3 && section < 8,
             })}
-            />
+            type="button"
+            onClick={() => window.scrollTo({ top: window.innerHeight * 3 })}
+          >
+            INFO
           </button>
-          <button type="button" onClick={() => handleSection(4)}>
-            <div className={cn({
+          <button
+            className={cn({
               [styles.progress]: true,
-              [styles['progress--now']]: section === 4,
+              [styles['progress--selected']]: section >= 8,
             })}
-            />
+            type="button"
+            onClick={() => window.scrollTo({ top: window.innerHeight * 8 })}
+          >
+            REWARD
           </button>
-          <button type="button" onClick={() => handleSection(5)}>
-            <div className={cn({
-              [styles.progress]: true,
-              [styles['progress--now']]: section === 5,
-            })}
-            />
-          </button>
+
         </div>
 
         <button
           className={styles['header__pre-reserve']}
           type="button"
-          onClick={() => contentRef?.current?.scrollTo({ left: window.innerWidth })}
         >
           베타테스트 신청 <ArrowIcon />
         </button>
       </div>
       <div className={styles.content}>
-        <FirstPage />
-        <SecondPage />
-        <ThirdPage />
-        <SecondPage />
-        <SecondPage />
-        <SecondPage />
+        <div
+          className={styles.content__section}
+          style={{ opacity: section < 1 ? 1 : 0 }}
+        >
+          <FirstPage />
+        </div>
+        <div
+          className={styles.content__section}
+          style={{ opacity: (section < 2 && section >= 1) ? 1 : 0 }}
+        >
+          <SecondPage />
+        </div>
+        <div
+          className={styles.content__section}
+          style={{ opacity: (section < 3 && section >= 2) ? 1 : 0 }}
+        >
+          <ThirdPage />
+        </div>
+        <div
+          className={styles.content__section}
+          style={{ opacity: (section < 8 && section >= 3) ? 1 : 0 }}
+        >
+          <ForthPage section={section} />
+        </div>
+        <div
+          className={styles.content__section}
+          style={{ opacity: (section < 9 && section >= 8) ? 1 : 0 }}
+        >
+          <Reward.First />
+        </div>
+        <div
+          className={styles.content__section}
+          style={{ opacity: (section >= 9) ? 1 : 0 }}
+        >
+          <Reward.Second />
+        </div>
       </div>
     </div>
   );
