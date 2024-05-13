@@ -61,6 +61,7 @@
     "eslint-plugin-react": "^7.34.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "optionator": "^0.9.3",
+    "postcss": "^8.4.38",
     "react-error-boundary": "^4.0.13",
     "stylelint": "^16.2.1",
     "stylelint-config-standard": "^36.0.0",
