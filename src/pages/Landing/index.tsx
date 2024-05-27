@@ -19,14 +19,13 @@ export default function Landing() {
     const handleScroll = () => {
       setSection(Math.round((window.scrollY / window.innerHeight) * 100) / 100);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-  const handleBetatestClick = () => {
+  const handleBetatestClick = () => {    
     navigate('/betatest');
   };
 

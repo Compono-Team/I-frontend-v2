@@ -75,7 +75,13 @@
   color: #ffffff;
   border-radius: 4px;
   border: 1px solid;
-  border-image: linear-gradient(to right, #ffffff 0%, #373737 49%, #ffffff 87%, #312f2f 100%);
+  border-image: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #373737 49%,
+    #ffffff 87%,
+    #312f2f 100%
+  );
   border-image-slice: 1;
   background-color: #000000;
   backdrop-filter: blur(2px);
@@ -117,7 +123,7 @@
     transform: translateX(-50%);
     width: 1851px;
     height: 623px;
-    background: url("/src/assets/image/Landing/back_ring.png");
+    background: url('/src/assets/image/Landing/back_ring.png');
     overflow: visible;
     background-repeat: no-repeat;
     background-size: contain;
