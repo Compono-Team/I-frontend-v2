@@ -4,7 +4,6 @@ import { ChangeEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TermsModal from 'components/unit/betatest/TermsModal';
 import ArrowLeftIcon from 'assets/svg/common/arrow_left.svg?react';
-import { postPreApplication } from 'apis/preApplication';
 import styles from './Betatest.module.scss';
 
 function Betatest() {
@@ -23,14 +22,14 @@ function Betatest() {
     phone: string;
     name: string;
     terms: NonNullable<boolean | undefined>;
-  }> = (data) => {
-    const { phone, name, email } = data;
-    const params = {
-      phoneNumber: phone,
-      name,
-      email,
-      expectation: '',
-    };
+  }> = () => {
+    // const { phone, name, email } = data;
+    // const params = {
+    //   phoneNumber: phone,
+    //   name,
+    //   email,
+    //   expectation: '',
+    // };
     // postPreApplication(params);
   };
 
