@@ -3,14 +3,17 @@ import ArrowIcon from 'assets/svg/common/arrow_right.svg?react';
 import FirstPage from 'pages/Landing/components/FirstPage/FirstPage';
 import { useEffect, useState } from 'react';
 import cn from 'utils/ts/className';
-import styles from './Landing.module.scss';
+import { useNavigate } from 'react-router-dom';
 import SecondPage from './components/SecondPage/SecondPage';
 import ThirdPage from './components/ThirdPage/ThirdPage';
 import ForthPage from './components/ForthPage/ForthPage';
 import Reward from './components/Reward';
+import styles from './Landing.module.scss';
 
 export default function Landing() {
   const [section, setSection] = useState(0);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,18 +26,17 @@ export default function Landing() {
     };
   }, []);
 
+  const handleBetatestClick = () => {
+    navigate('/betatest');
+  };
+
   return (
     <div className={styles.layout}>
-      <div
-        className={styles.header}
-        style={{ opacity: section >= 1 ? 1 : 0 }}
-      >
+      <div className={styles.header} style={{ opacity: section >= 1 ? 1 : 0 }}>
         <div className={styles.header__logo}>
           <LogoIcon />
         </div>
-        <div
-          className={styles.header__progress}
-        >
+        <div className={styles.header__progress}>
           <button
             className={cn({
               [styles.progress]: true,
@@ -85,10 +87,10 @@ export default function Landing() {
           >
             REWARD
           </button>
-
         </div>
 
         <button
+          onClick={handleBetatestClick}
           className={styles['header__pre-reserve']}
           type="button"
         >
@@ -104,31 +106,31 @@ export default function Landing() {
         </div>
         <div
           className={styles.content__section}
-          style={{ opacity: (section < 2 && section >= 1) ? 1 : 0 }}
+          style={{ opacity: section < 2 && section >= 1 ? 1 : 0 }}
         >
           <SecondPage />
         </div>
         <div
           className={styles.content__section}
-          style={{ opacity: (section < 3 && section >= 2) ? 1 : 0 }}
+          style={{ opacity: section < 3 && section >= 2 ? 1 : 0 }}
         >
           <ThirdPage />
         </div>
         <div
           className={styles.content__section}
-          style={{ opacity: (section < 8 && section >= 3) ? 1 : 0 }}
+          style={{ opacity: section < 8 && section >= 3 ? 1 : 0 }}
         >
           <ForthPage section={section} />
         </div>
         <div
           className={styles.content__section}
-          style={{ opacity: (section < 9 && section >= 8) ? 1 : 0 }}
+          style={{ opacity: section < 9 && section >= 8 ? 1 : 0 }}
         >
           <Reward.First />
         </div>
         <div
           className={styles.content__section}
-          style={{ opacity: (section >= 9) ? 1 : 0 }}
+          style={{ opacity: section >= 9 ? 1 : 0 }}
         >
           <Reward.Second />
         </div>
