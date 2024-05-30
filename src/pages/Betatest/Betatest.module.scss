@@ -3,27 +3,111 @@
   padding: 0;
   box-sizing: border-box;
   font-size: 18px;
+
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 1024px) {
   /* 타블렛 */
   * {
-    font-size: 14px;
+    font-size: 13px;
+  }
+  .container{
+    padding: calc(20px + (100 - 20) * ((100vw - 1024px) / (1920 - 1024))) calc(20px + (230 - 20) * ((100vw - 1024px) / (1920 - 1024)));
+    
+    .descContainer{
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
-// @media screen and (max-width: 767px) {
-//   /* 모바일 */
-//   * {
-//     font-size: 10px;
-//   }
-// }
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  /* 타블렛 */
+  * {
+    font-size: 13px;
+  }
+  .container{
+    padding:20px;
+
+    .descContainer{
+    justify-content: space-between;
+    align-items: center;
+  }
+
+ 
+    
+  }
+ 
+
+}
+@media screen and (max-width: 1055px) {
+  /* 타블렛 */
+  * {
+    font-size: 13px;
+  }
+
+  .container{
+
+    .descContainer{
+   
+    justify-content: center;
+    align-items: center;
+    gap:32px;
+    
+      }
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+  
+  * {
+    font-size: 8px;
+  }
+
+  .container{
+
+    .descContainer{
+   
+    justify-content: center;
+    align-items: center;
+    gap:32px;
+    
+      }
+
+    .contentsWrapper{
+      
+      .mainContents{
+        text-align: center !important;
+      }
+      .mainContents2{
+        text-align: center !important;
+       
+      
+      }
+    }
+    .registerFormContainer{
+    
+  
+      .input{
+        width:100% !important;
+      }
+    }
+  }
+  
+
+}
+
+
+
 
 .container {
   width: 100%;
-  height: 100vh;
-  padding: 3.8rem 3.8rem 3.8rem 3.8rem;
-  box-sizing: border-box;
+  height: auto;
+  // padding: calc(20px + (100 - 20) * ((100vw - 1024px) / (1920 - 1024))) calc(20px + (230 - 20) * ((100vw - 1024px) / (1920 - 1024)));
 
   .backNav {
     display: none;
@@ -38,17 +122,21 @@
 
     .mainContents {
       text-align: end;
-      font-size: 3rem;
+      margin-bottom: 60px;
+      
       h1 {
-        font-size: 3rem;
+        font-weight: 500;
+        font-size: 4rem;
       }
       .lineBreak {
-        font-size: 3rem;
+        font-weight: 500;
+        font-size: 4rem;
       }
     }
     .mainContents2 {
       h1 {
-        font-size: 3rem;
+        font-weight: 500;
+        font-size: 4rem;
       }
     }
   }
@@ -58,23 +146,34 @@
     height: 60%;
     display: flex;
     padding-top: 3rem;
-    justify-content: space-between;
-    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center; 
+    gap: 3rem;
+    margin-bottom: 5rem;
+    
 
     .descWrapper {
+
       .betaActiveWrapper {
+        width:100%;
+       
+
         .header {
-          font-weight: 700;
-          margin-bottom: 1rem;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        span{
           font-size: 1.6rem;
         }
+      }   
+
         .contentsWrapper {
-          width: 100%;
+          
           display: flex;
           gap: 0.5rem;
+          
 
           span {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
           }
         }
         .activeWrapper {
@@ -87,6 +186,7 @@
       }
       .betaBenefitsWrapper {
         .header {
+          
           font-weight: 700;
           margin-bottom: 1rem;
           font-size: 1.6rem;
@@ -100,7 +200,7 @@
           gap: 0.5rem;
           font-size: 1.6rem;
           li {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
           }
         }
       }
@@ -111,21 +211,37 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     .inputsForm {
       display: flex;
+      width:100%;
+      align-items: center;
       justify-content: center;
       flex-direction: column;
+      
     }
 
     .header {
-      font-weight: 700;
-      margin-bottom: 1.2rem;
-      text-align: center;
-      font-size: 1.6rem;
-    }
+          display: flex;
+          justify-content: start;
+          width:100%;
+          
+          font-weight: 700;
+          margin-bottom: 1rem;
+          
+          max-width:290px;
+          span{
+              text-align: start;
+              
+              font-size: 1.2rem;
+          }
+        }
+
+   
     .input {
+    
       text-align: center;
-      width: 29rem;
+      width: 34rem;
       max-width: 100%;
       height: 3.4rem;
       border-radius: 30px;
@@ -150,7 +266,7 @@
       }
 
       .termsButton {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
         color: gray;
         text-decoration: underline;
         cursor: pointer;
@@ -172,15 +288,16 @@
       width: 15rem;
       padding: 1rem;
       border-radius: 50px;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       background-color: black;
       color: white;
     }
   }
 }
-@media (max-width: 480px) {
+
+@media (max-width: 768px) {
   * {
-    font-size: 10px;
+    font-size: 7px;
   }
   .container {
     padding: 60px 30px 30px 30px;
@@ -202,39 +319,84 @@
     .contentsWrapper {
       height: 15%;
 
+      
+
       .mainContents {
         padding-left: 3px;
         padding-right: 3px;
 
-        text-align: center;
+        margin-bottom: 10px;
         border-left: 2px solid black;
         border-right: 2px solid black;
-        h1 {
-          font-size: 2rem;
-        }
 
-        .lineBreak {
-          font-size: 2rem;
-          display: inline;
-        }
       }
       .mainContents2 {
-        text-align: center;
-        font-size: 3rem;
+        text-align: start;
+        padding-left: 2rem;
+      
         h1 {
-          font-size: 2rem;
+          font-weight: 700;
+          
         }
       }
     }
+     .descWrapper{
+       
+         height: 160px;
+        margin-bottom: 6rem;
+      
+      }
     .descContainer {
       height: auto;
-      display: block;
+      display: block; 
+   
+    
+     
     }
+
     .betaActiveWrapper {
-      padding: 1rem;
+      width:100%;
+      height: 100%;
+     
+      padding: 30px 2.7rem;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
       border-radius: 10px;
-      margin-bottom: 6rem;
+    
+      display: flex;
+      flex-direction: column;
+      // justify-content: center;
+      align-items: center;
+      gap:10px;
+
+      .header{
+       max-width: 330px;
+       min-width: auto;
+        font-size: 3rem;
+       
+        
+
+        span{
+        
+          font-size: 2rem !important;
+        }
+        
+      }
+      .contentsWrapper{
+        max-width: 330px;
+        min-width: auto;
+        span{
+          font-size: 1.8rem !important;
+        }
+      }
+
+      
+      .activeWrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        
+      }
     }
 
     .registerFormContainer {
@@ -243,8 +405,8 @@
         display: none;
       }
       .input {
-        width: 38rem;
-        height: 4.5rem;
+        width: 60%;
+        height: 6rem;
         font-size: 2rem;
       }
     }
@@ -252,4 +414,6 @@
   .betaBenefitsWrapper {
     display: none;
   }
+
+
 }
