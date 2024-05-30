@@ -4,6 +4,7 @@ import { ChangeEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TermsModal from 'components/unit/betatest/TermsModal';
 import ArrowLeftIcon from 'assets/svg/common/arrow_left.svg?react';
+import { postPreApplication } from 'apis/preApplication';
 import styles from './Betatest.module.scss';
 
 function Betatest() {
@@ -22,15 +23,17 @@ function Betatest() {
     phone: string;
     name: string;
     terms: NonNullable<boolean | undefined>;
-  }> = () => {
-    // const { phone, name, email } = data;
-    // const params = {
-    //   phoneNumber: phone,
-    //   name,
-    //   email,
-    //   expectation: '',
-    // };
-    // postPreApplication(params);
+  }> = (data) => {
+    const { phone, name, email } = data;
+    const params = {
+      phoneNumber: phone,
+      name,
+      email,
+      expectation: '',
+    };
+    postPreApplication(params).then(() => {
+      navigate('/', { replace: true });
+    });
   };
 
   const handleTermsClick = () => {
@@ -89,7 +92,8 @@ function Betatest() {
       <article className={styles.descContainer}>
         <article className={styles.descWrapper}>
           <section className={styles.betaActiveWrapper}>
-            <header className={styles.header}>베타테스트 활동 개요</header>
+
+            <header className={styles.header}><span>베타테스트 활동 개요</span></header>
             <div className={styles.contentsWrapper}>
               <span>모집기간: 2024.05.20 (월) ~ 2024.06.28 (금)</span>
               <span>1차 CBT 활동 기간 : 2024-07-01 (월) ~ 2024.07.14 (일)</span>

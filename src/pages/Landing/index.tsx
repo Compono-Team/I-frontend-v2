@@ -25,7 +25,7 @@ export default function Landing() {
     };
   }, []);
 
-  const handleBetatestClick = () => {    
+  const handleBetatestClick = () => {
     navigate('/betatest');
   };
 
