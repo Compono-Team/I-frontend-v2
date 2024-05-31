@@ -15,8 +15,8 @@ function TermsModal({ onClose }: TProps) {
           </button>
         </div>
         <div className={styles.modalContent}>
-          <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-            개인정보 수집 및 이용동의서 AXYZ는 「개인정보 보호법」에 따라 동의를
+          <div className={styles.content}>
+            AXYZ는 「개인정보 보호법」에 따라 동의를
             얻어 본 설문과 관련하여 수집한 정보를 관리함에 있습니다. 이용자가
             제공한 모든 정보는 다음의 목적을 위해 활용하며 이외의 용도로는
             사용되지 않습니다.
