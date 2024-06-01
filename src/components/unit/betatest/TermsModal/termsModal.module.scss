@@ -18,6 +18,7 @@
   height: 524px;
   position: relative;
 
+
   .modalHeader {
     display: flex;
     justify-content: center;
@@ -66,11 +67,13 @@
     padding: 50px;
     width:80%;
     min-height: 27%;
-    height: auto;
+    height: auto ;
+
     
   }
   .content{
-    padding:10px !important;
+   
+    padding:8px !important;
   }
 }
 
