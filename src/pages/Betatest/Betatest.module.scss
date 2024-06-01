@@ -99,6 +99,7 @@
       }
     }
     .registerFormContainer{
+     
     
   
       .input{
@@ -134,17 +135,17 @@
       margin-bottom: 60px;
       
       h1 {
-        font-weight: 500;
+        font-weight: 700;
         font-size: 4rem;
       }
       .lineBreak {
-        font-weight: 500;
+        font-weight: 700;
         font-size: 4rem;
       }
     }
     .mainContents2 {
       h1 {
-        font-weight: 500;
+        font-weight: 700;
         font-size: 4rem;
       }
     }
@@ -232,7 +233,7 @@
 
     .header {
           display: flex;
-          justify-content: start;
+          justify-content: center;
           width:100%;
           
           font-weight: 700;
@@ -297,7 +298,7 @@
       width: 15rem;
       padding: 1rem;
       border-radius: 50px;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       background-color: black;
       color: white;
     }
