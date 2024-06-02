@@ -175,12 +175,9 @@
         }
       }   
 
-        .contentsWrapper {
-          
+        .contentsWrapper { 
           display: flex;
           gap: 0.5rem;
-          
-
           span {
             font-size: 1.5rem;
           }
@@ -214,6 +211,11 @@
         }
       }
     }
+  }
+
+  .errormessage{
+    color:red;
+    font-size:1rem;
   }
 
   .registerFormContainer {
@@ -277,7 +279,7 @@
       }
 
       .termsButton {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         color: gray;
         text-decoration: underline;
         cursor: pointer;
@@ -401,7 +403,7 @@
       .input {
         width: 60%;
         height: 6rem;
-        font-size: 24px;
+        font-size: 14px;
       }
     }
   }
@@ -411,6 +413,11 @@
 
   .buttonWrapper{
     height: 4rem !important;
+    
+  .errormessage{
+    color:red;
+    font-size:1.5rem;
+  }
 
     .button{
       width:27rem !important;

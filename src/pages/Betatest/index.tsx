@@ -154,7 +154,7 @@ function Betatest() {
       </article>
       <div className={styles.buttonWrapper}>
         {getFirstErrorMessage() && (
-          <div style={{ color: 'red' }}>{getFirstErrorMessage()}</div>
+          <div className={styles.errormessage}>{getFirstErrorMessage()}</div>
         )}
         <button
           type="submit"
