@@ -29,10 +29,13 @@ function Betatest() {
       phoneNumber: phone,
       name,
       email,
-      expectation: '',
+      expectation: 'test',
     };
     postPreApplication(params).then(() => {
       navigate('/', { replace: true });
+    }).catch((err) => {
+      /* eslint-disable no-alert */
+      alert(err.response.data.msg);
     });
   };
 
