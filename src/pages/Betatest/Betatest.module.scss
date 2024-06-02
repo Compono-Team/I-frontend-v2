@@ -115,7 +115,7 @@
 
 
 .container {
-  width: 100%;
+  width: 100vw;
   height: auto;
   // padding: calc(20px + (100 - 20) * ((100vw - 1024px) / (1920 - 1024))) calc(20px + (230 - 20) * ((100vw - 1024px) / (1920 - 1024)));
 
@@ -221,6 +221,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    .header{
+      font-size: 1.7rem;
+    }
     
     .inputsForm {
       display: flex;
@@ -376,8 +379,6 @@
       
       align-items: center;
       gap:10px;
-      
-
       .header{
        max-width: 330px;
        min-width: auto;
@@ -413,6 +414,8 @@
       margin-bottom: 5rem;
       .header {
         display: none;
+      
+    
       }
       .input {
         width: 60%;

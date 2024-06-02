@@ -3,6 +3,7 @@ import BoldArrowIcon from 'assets/svg/common/arrow_right_bold.svg?react';
 import CouponIcon from 'assets/svg/Landing/coupon.svg?react';
 import StarbucksIcon from 'assets/svg/Landing/starbucks.svg?react';
 import QuestionIcon from 'assets/svg/Landing/question.svg?react';
+import { useNavigate } from 'react-router-dom';
 import styles from './Reward.module.scss';
 
 function RewardFirst() {
@@ -40,6 +41,11 @@ function RewardFirst() {
 }
 
 function RewardSecond() {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/betatest');
+  };
+
   return (
     <div className={styles.template}>
       <div className={styles.second}>
@@ -71,6 +77,7 @@ function RewardSecond() {
             베타테스트 참가자분들께{'\n'}
             이런 혜택을 드려요!
             <button
+              onClick={handleClick}
               className={styles.recommend__regist}
               type="button"
             >
