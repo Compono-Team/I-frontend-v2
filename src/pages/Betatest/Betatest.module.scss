@@ -117,8 +117,6 @@
 .container {
   width: 100%;
   height: auto;
-  // padding: calc(20px + (100 - 20) * ((100vw - 1024px) / (1920 - 1024))) calc(20px + (230 - 20) * ((100vw - 1024px) / (1920 - 1024)));
-
   .backNav {
     display: none;
   }
@@ -197,14 +195,15 @@
           margin-bottom: 1rem;
           font-size: 1.6rem;
         }
+
         .activeWrapper {
           width: 100%;
           display: flex;
           flex-direction: column;
-
           margin-left: 2rem;
           gap: 0.5rem;
           font-size: 1.6rem;
+
           li {
             font-size: 1.5rem;
           }
@@ -320,29 +319,41 @@
       display: none;
     }
 
-    // .backNav {
-    //   display: block;
-    //   position: absolute;
-    //   top: 15px;
-    //   left: 15px;
-    //   border: none;
-    //   background-color: white;
-    //   cursor: pointer;
-    // }
 
     .contentsWrapper {
       height: 15%;
       padding: 0;
 
       .mainContents {
-        padding-left: 3px;
-        padding-right: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        position: relative; 
+        margin-bottom: 20px;
+       
 
-        margin-bottom: 10px;
-        border-left: 2px solid black;
-        border-right: 2px solid black;
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          top: 20px;
+          transform: translateY(-50%); 
+          width: 2px;
+          height: 34px;
+          background-color: black;
+        }
+
+        &::before {
+          left: 0; 
+        }
+
+        &::after {
+          right: 0px;
+        }
 
       }
+
+
+
       .mainContents2 {
         text-align: start;
         padding-left: 2rem;
