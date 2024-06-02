@@ -115,7 +115,7 @@
 
 
 .container {
-  width: 100vw;
+  width: 100%;
   height: auto;
   // padding: calc(20px + (100 - 20) * ((100vw - 1024px) / (1920 - 1024))) calc(20px + (230 - 20) * ((100vw - 1024px) / (1920 - 1024)));
 
@@ -166,7 +166,6 @@
 
       .betaActiveWrapper {
         width:100%;
-       
 
         .header {
         font-weight: 700;
@@ -263,7 +262,7 @@
     }
     .error {
       border-color: red;
-      font-size: 1.2rem;
+      font-size: 24px;
     }
     .checkoxWrapper {
       display: flex;
@@ -288,6 +287,7 @@
       }
     }
   }
+
   .buttonWrapper {
     width: 100%;
     display: flex;
@@ -351,16 +351,14 @@
         }
       }
     }
-     .descWrapper{
-       
+    .descWrapper{
         height: 160px;
         margin-bottom: 6rem;
-      
       }
+
     .descContainer {
       height: auto;
       display: block; 
-
     }
 
     .betaActiveWrapper {
@@ -369,22 +367,18 @@
       padding: 30px  2.7rem 18px 2.7rem;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
       border-radius: 10px;
-    
       display: flex;
       flex-direction: column;
-      
       align-items: center;
       gap:10px;
-      .header{
-       max-width: 330px;
-       min-width: auto;
-        font-size: 3rem;
 
+      .header{
+        max-width: 330px;
+        min-width: auto;
+        font-size: 3rem;
         span{
-        
           font-size: 2rem !important;
         }
-        
       }
       .contentsWrapper{
         max-width: 330px;
@@ -393,23 +387,16 @@
           font-size: 1.8rem !important;
         }
       }
-
-      
       .activeWrapper{
         display: flex;
         justify-content: center;
-        align-items: center;
-    
-        
+        align-items: center; 
       }
     }
-
     .registerFormContainer {
       margin-bottom: 5rem;
       .header {
         display: none;
-      
-    
       }
       .input {
         width: 60%;
@@ -420,6 +407,16 @@
   }
   .betaBenefitsWrapper {
     display: none;
+  }
+
+  .buttonWrapper{
+    height: 4rem !important;
+
+    .button{
+      width:27rem !important;
+      font-size: 2.3rem !important;
+      
+    }
   }
 
 
