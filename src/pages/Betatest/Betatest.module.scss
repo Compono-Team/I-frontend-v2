@@ -84,7 +84,6 @@
         text-align: center !important;
       }
     }
-
     .registerFormContainer {
       .input {
         width: 100% !important;
@@ -96,9 +95,6 @@
 .container {
   width: 100%;
   height: auto;
-
-  // padding: calc(20px + (100 - 20) * ((100vw - 1024px) / (1920 - 1024))) calc(20px + (230 - 20) * ((100vw - 1024px) / (1920 - 1024)));
-
   .backNav {
     display: none;
   }
@@ -115,19 +111,19 @@
       margin-bottom: 60px;
 
       h1 {
-        font-weight: 500;
+        font-weight: 700;
         font-size: 4rem;
       }
 
       .lineBreak {
-        font-weight: 500;
+        font-weight: 700;
         font-size: 4rem;
       }
     }
 
     .mainContents2 {
       h1 {
-        font-weight: 500;
+        font-weight: 700;
         font-size: 4rem;
       }
     }
@@ -197,6 +193,11 @@
     }
   }
 
+  .errormessage {
+    color: red;
+    font-size: 1rem;
+  }
+
   .registerFormContainer {
     display: flex;
     flex-direction: column;
@@ -214,12 +215,14 @@
       display: flex;
       justify-content: start;
       width: 100%;
+
       font-weight: 700;
       margin-bottom: 1rem;
-      max-width: 290px;
 
+      max-width: 290px;
       span {
         text-align: start;
+
         font-size: 1.2rem;
       }
     }
@@ -231,13 +234,13 @@
       height: 3.4rem;
       border-radius: 30px;
       margin-bottom: 1.8rem;
-      border: 1px solid rgb(54 53 53);
-      font-size: 1.5rem;
+      border: 1px solid rgb(54, 53, 53);
+      font-size: 24px;
     }
 
     .error {
       border-color: red;
-      font-size: 1.2rem;
+      font-size: 24px;
     }
 
     .checkoxWrapper {
@@ -253,7 +256,7 @@
       }
 
       .termsButton {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         color: gray;
         text-decoration: underline;
         cursor: pointer;
@@ -276,7 +279,7 @@
       width: 15rem;
       padding: 1rem;
       border-radius: 50px;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       background-color: black;
       color: white;
     }
@@ -296,27 +299,17 @@
       display: none;
     }
 
-    // .backNav {
-    //   display: block;
-    //   position: absolute;
-    //   top: 15px;
-    //   left: 15px;
-    //   border: none;
-    //   background-color: white;
-    //   cursor: pointer;
-    // }
-
     .contentsWrapper {
       height: 15%;
 
       .mainContents {
         padding-left: 3px;
         padding-right: 3px;
+
         margin-bottom: 10px;
         border-left: 2px solid black;
         border-right: 2px solid black;
       }
-
       .mainContents2 {
         text-align: start;
         padding-left: 2rem;
@@ -326,12 +319,10 @@
         }
       }
     }
-
     .descWrapper {
       height: 160px;
       margin-bottom: 6rem;
     }
-
     .descContainer {
       height: auto;
       display: block;
@@ -340,13 +331,12 @@
     .betaActiveWrapper {
       width: 100%;
       height: 100%;
+
       padding: 30px 2.7rem;
-      box-shadow: 0 4px 6px rgb(0 0 0 / 20%);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
       border-radius: 10px;
       display: flex;
       flex-direction: column;
-
-      // justify-content: center;
       align-items: center;
       gap: 10px;
 
@@ -370,12 +360,13 @@
       }
 
       .activeWrapper {
+      .activeWrapper{
         display: flex;
         justify-content: center;
         align-items: center;
+        align-items: center; 
       }
     }
-
     .registerFormContainer {
       margin-bottom: 5rem;
 
@@ -386,7 +377,7 @@
       .input {
         width: 60%;
         height: 6rem;
-        font-size: 2rem;
+        font-size: 14px;
       }
     }
   }
