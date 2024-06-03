@@ -1,19 +1,57 @@
+@use "/src/utils/style/mediaQuery.scss" as media;
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    display: block;
+    opacity: 1;
+  }
+
+  to {
+    display: block;
+    opacity: 0;
+  }
+}
+
 .layout {
   width: 100%;
   height: 1100vh;
   background-color: #000;
+
+  @include media.media-breakpoint(mobile) {
+    height: 100%;
+  }
 }
 
 .header {
   position: fixed;
   width: 100%;
-  display: flex;
+  display: none;
   align-items: center;
   height: 70px;
   box-sizing: border-box;
   border-bottom: 1px solid #ffffff;
   background-color: #000000;
-  z-index: 10;
+  z-index: 20;
+
+  @include media.media-breakpoint(mobile) {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  &--visible {
+    display: flex;
+  }
 
   &__logo {
     width: 240px;
@@ -24,6 +62,12 @@
     justify-content: center;
     align-items: center;
     border-right: 1px solid #ffffff;
+
+    @include media.media-breakpoint(mobile) {
+      width: auto;
+      padding: 0 10px;
+      border: none;
+    }
   }
 
   &__progress {
@@ -32,6 +76,10 @@
     align-items: center;
     justify-content: center;
     gap: 40px;
+
+    @include media.media-breakpoint(mobile) {
+      display: none;
+    }
   }
 
   &__pre-reserve {
@@ -52,6 +100,14 @@
     border-left: 1px solid #fff;
     transition: 0.2s linear;
     cursor: pointer;
+
+    @include media.media-breakpoint(mobile) {
+      width: auto;
+      border: none;
+      padding: 0 20px;
+      font-size: 16px;
+      font-weight: 600;
+    }
 
     svg {
       width: 14px;
@@ -90,9 +146,32 @@
   overflow: hidden;
 
   &__section {
+    position: fixed;
+    display: none;
     width: 100%;
     height: 100%;
-    transition: 0.5s;
     overflow: hidden;
+
+    @include media.media-breakpoint(mobile) {
+      position: relative;
+      display: block;
+    }
+
+    &--open {
+      display: block;
+      animation: fade-in 0.5s linear;
+
+      @include media.media-breakpoint(mobile) {
+        animation: none;
+      }
+    }
+
+    &--close {
+      animation: fade-out 0.5s linear;
+
+      @include media.media-breakpoint(mobile) {
+        animation: none;
+      }
+    }
   }
 }

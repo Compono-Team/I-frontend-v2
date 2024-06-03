@@ -17,14 +17,14 @@ export default function FirstPage() {
           ALL THE TIME{'\n'}
           ALL-GANIZE
           <div className={styles.title__sub}>
-            AXYZ is Your Own Time Management Copilot
+            AXYZ is Your Own{'\n'} Time Management Copilot
           </div>
         </div>
 
         <div className={styles.bottom}>
           <button
-            onClick={handleBetatestClick}
             className={styles.assign}
+            onClick={handleBetatestClick}
             type="button"
           >
             베타테스트 신청하기

@@ -1,5 +1,16 @@
+@use "/src/utils/style/mediaQuery.scss" as media;
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .template {
-  position: fixed;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -15,7 +26,10 @@
   justify-content: space-between;
   margin-top: 100px;
   border-bottom: 1px solid #fff;
-  z-index: 1;
+
+  @include media.media-breakpoint(mobile) {
+    display: none;
+  }
 
   &__selector {
     position: absolute;
@@ -46,10 +60,13 @@
 
 .pages {
   display: flex;
-  width: 90%;
-  scroll-behavior: smooth;
+  width: 100%;
   overflow: hidden;
   flex-shrink: 0;
+
+  @include media.media-breakpoint(mobile) {
+    flex-direction: column;
+  }
 }
 
 .page {
@@ -58,14 +75,34 @@
   gap: 40px;
   flex-shrink: 0;
   box-sizing: border-box;
-  padding: 10px 5px;
+  padding: 10px 5%;
   opacity: 0;
   color: #fff;
+  transition: opacity 0.5s;
+
+  &:last-child {
+    opacity: 1;
+  }
+
+  @include media.media-breakpoint(mobile) {
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 50px;
+  }
+
+  &__title {
+    width: 100%;
+    font-size: 28px;
+    font-weight: 600;
+  }
 
   &--column {
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 0;
+    padding-top: 50px;
   }
 
   &--open {
@@ -73,7 +110,7 @@
   }
 
   &--close {
-    opacity: 1;
+    opacity: 0;
   }
 }
 
@@ -83,6 +120,16 @@
   width: 412px;
   height: 574px;
   background: linear-gradient(0deg, #fff, #000);
+
+  @include media.media-breakpoint(mobile) {
+    width: 100%;
+    height: 400px;
+
+    svg {
+      width: auto;
+      height: 400px;
+    }
+  }
 
   &--bottom {
     display: flex;
@@ -95,13 +142,35 @@
   flex: 1 0;
   display: flex;
   align-items: flex-end;
-  white-space: pre-wrap;
-  font-size: 26px;
-  line-height: 150%;
-  font-weight: 300;
 
-  span {
+  @include media.media-breakpoint(mobile) {
+    width: 100%;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  div {
+    white-space: pre-wrap;
+    line-height: 150%;
+    font-size: 26px;
+    font-weight: 400;
+
+    @include media.media-breakpoint(mobile) {
+      width: 100%;
+      font-size: 18px;
+      text-align: left;
+      align-items: flex-start;
+      word-break: keep-all;
+    }
+  }
+
+  div > span {
+    font-size: 26px;
     font-weight: 700;
+
+    @include media.media-breakpoint(mobile) {
+      font-size: 18px;
+    }
   }
 }
 
@@ -109,6 +178,7 @@
   display: flex;
   gap: 40px;
   margin: 30px 0;
+  overflow: hidden;
 
   &__title {
     height: fit-content;
@@ -118,6 +188,7 @@
     color: #000000;
 
     span {
+      font-size: 22px;
       font-weight: 700;
     }
   }

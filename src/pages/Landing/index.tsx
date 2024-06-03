@@ -31,7 +31,11 @@ export default function Landing() {
 
   return (
     <div className={styles.layout}>
-      <div className={styles.header} style={{ opacity: section >= 1 ? 1 : 0 }}>
+      <div className={cn({
+        [styles.header]: true,
+        [styles['header--visible']]: section >= 1,
+      })}
+      >
         <div className={styles.header__logo}>
           <LogoIcon />
         </div>
@@ -89,8 +93,8 @@ export default function Landing() {
         </div>
 
         <button
-          onClick={handleBetatestClick}
           className={styles['header__pre-reserve']}
+          onClick={handleBetatestClick}
           type="button"
         >
           베타테스트 신청 <ArrowIcon />
@@ -98,38 +102,56 @@ export default function Landing() {
       </div>
       <div className={styles.content}>
         <div
-          className={styles.content__section}
-          style={{ opacity: section < 1 ? 1 : 0 }}
+          className={cn({
+            [styles.content__section]: true,
+            [styles['content__section--open']]: section < 1,
+            [styles['content__section--close']]: !(section < 1),
+          })}
         >
           <FirstPage />
         </div>
         <div
-          className={styles.content__section}
-          style={{ opacity: section < 2 && section >= 1 ? 1 : 0 }}
+          className={cn({
+            [styles.content__section]: true,
+            [styles['content__section--open']]: section < 2 && section >= 1,
+            [styles['content__section--close']]: !(section < 2 && section >= 1),
+          })}
         >
           <SecondPage />
         </div>
         <div
-          className={styles.content__section}
-          style={{ opacity: section < 3 && section >= 2 ? 1 : 0 }}
+          className={cn({
+            [styles.content__section]: true,
+            [styles['content__section--open']]: section < 3 && section >= 2,
+            [styles['content__section--close']]: !(section < 3 && section >= 2),
+          })}
         >
           <ThirdPage />
         </div>
         <div
-          className={styles.content__section}
-          style={{ opacity: section < 8 && section >= 3 ? 1 : 0 }}
+          className={cn({
+            [styles.content__section]: true,
+            [styles['content__section--open']]: section < 8 && section >= 3,
+            [styles['content__section--close']]: !(section < 8 && section >= 3),
+          })}
         >
           <ForthPage section={section} />
         </div>
         <div
-          className={styles.content__section}
-          style={{ opacity: section < 9 && section >= 8 ? 1 : 0 }}
+          className={cn({
+            [styles.content__section]: true,
+            [styles['content__section--open']]: section < 9 && section >= 8,
+            [styles['content__section--close']]: !(section < 9 && section >= 8),
+          })}
         >
           <Reward.First />
         </div>
         <div
-          className={styles.content__section}
-          style={{ opacity: section >= 9 ? 1 : 0 }}
+          className={cn({
+            [styles.content__section]: true,
+            [styles['content__section--open']]: section >= 9,
+            [styles['content__section--close']]: !(section >= 9),
+          })}
         >
           <Reward.Second />
         </div>
