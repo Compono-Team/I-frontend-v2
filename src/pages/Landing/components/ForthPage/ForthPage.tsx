@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import FirstImage from 'assets/svg/Landing/first_info.svg?react';
 import SecondImage from 'assets/svg/Landing/second_info.svg?react';
 import ThirdImage from 'assets/svg/Landing/third_info.svg?react';
+import useMediaQuery from 'hooks/useMediaQuery';
 import styles from './ForthPage.module.scss';
 
 interface Props {
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export default function ForthPage({ section }: Props) {
+  const isMobile = useMediaQuery();
   const pageRef = useRef<HTMLDivElement>(null);
 
   const handleSection = () => {
@@ -27,7 +29,7 @@ export default function ForthPage({ section }: Props) {
       return Math.floor(section - 3);
     };
     if (page) {
-      page.scrollLeft = pageRef.current.clientWidth * currentSection();
+      page.scrollLeft = page.clientWidth * currentSection();
     }
   }, [section]);
 
@@ -111,7 +113,12 @@ export default function ForthPage({ section }: Props) {
           Image-recognize
         </button>
       </div>
-      <div className={styles.pages} ref={pageRef}>
+
+      <div
+        className={styles.pages}
+        ref={pageRef}
+        style={{ scrollBehavior: section < 6 ? 'smooth' : 'auto' }}
+      >
         <div className={cn({
           [styles.page]: true,
           [styles['page--open']]: (section >= 3 && section < 4),
@@ -121,11 +128,20 @@ export default function ForthPage({ section }: Props) {
           <div className={styles.photo}>
             <FirstImage />
           </div>
+          {isMobile && <div className={styles.page__title}>ALL IN ONE</div>}
           <div className={styles.phrase}>
-            <div>
-              타임라인 · 투두리스트 · 캘린더 · 등 시간 관리를 위해 사용해왔던 서비스들{'\n'}
-              이제는 AXYZ 하나만으로 <span>모든 것이 완벽하게 연동되는 시스템을 사용해 보세요</span>
-            </div>
+            {isMobile
+              ? (
+                <div>
+                  타임라인 · 투두리스트 · 캘린더 {'\n'}시간 관리를 위해 사용해왔던 서비스들{'\n'}
+                  이제는 AXYZ 하나만으로 <span>모든 것이{'\n'} 완벽하게 연동되는 시스템을 사용해 보세요</span>
+                </div>
+              ) : (
+                <div>
+                  타임라인 · 투두리스트 · 캘린더 - 시간 관리를 위해 사용해왔던 서비스들{'\n'}
+                  이제는 AXYZ 하나만으로 <span>모든 것이 완벽하게 연동되는 시스템을 사용해 보세요</span>
+                </div>
+              )}
           </div>
         </div>
 
@@ -142,11 +158,20 @@ export default function ForthPage({ section }: Props) {
           >
             <SecondImage />
           </div>
+          {isMobile && <div className={styles.page__title}>AUTO TIMELINE</div>}
           <div className={styles.phrase}>
-            <div>
-              <span>공간의 변화</span>와 <span>시간의 흐름</span>을 기반으로 <span>자동으로 타임라인을 만들어요.</span>{'\n'}
-              이를 통해 여러분의 치열했던 하루를 정리해요.
-            </div>
+            {isMobile
+              ? (
+                <div>
+                  <span>공간의 변화</span>와 <span>시간의 흐름</span>을 기반으로{'\n'}<span>자동으로 타임라인을 만들어요.</span>{'\n'}
+                  이를 통해 여러분의 치열했던 하루를 정리해요.
+                </div>
+              ) : (
+                <div>
+                  <span>공간의 변화</span>와 <span>시간의 흐름</span>을 기반으로 <span>자동으로 타임라인을 만들어요.</span>{'\n'}
+                  이를 통해 여러분의 치열했던 하루를 정리해요.
+                </div>
+              )}
           </div>
         </div>
 
@@ -163,57 +188,71 @@ export default function ForthPage({ section }: Props) {
           >
             <ThirdImage />
           </div>
+          {isMobile && <div className={styles.page__title}>AI-POWERED</div>}
+
           <div className={styles.phrase}>
-            <div>
-              무한한 가능성이 기대되는 AXYZ의 Sync-Copilot이  <span>간단한 할 일 추천이나 마감, </span>{'\n'}
-              <span>시작 예정인 할 일</span>들을 알려줘요. 나중에는 더욱 고도화되고 최적화된 기능으로 찾아 뵐 예정이에요.
-            </div>
+            {isMobile
+              ? (
+                <div>
+                  무한한 가능성을 잠재한 AXYZ의 Sync-Copilot이{'\n'}
+                  할 일 추천 혹은 마감/시작 예정인 <span>일들을 알려줘요</span>{'\n'}
+                  나중에는 더욱 고도화되고 최적화된 기능으로{'\n'}
+                  찾아 뵐 예정이에요.
+                </div>
+              ) : (
+                <div>
+                  무한한 가능성이 기대되는 AXYZ의 Sync-Copilot이  <span>간단한 할 일 추천이나 마감, </span>{'\n'}
+                  <span>시작 예정인 할 일</span>들을 알려줘요. 나중에는 더욱 고도화되고 최적화된 기능으로 찾아 뵐 예정이에요.
+                </div>
+              )}
           </div>
         </div>
 
-        <div className={cn({
-          [styles.page]: true,
-          [styles['page--column']]: true,
-          [styles['page--open']]: (section >= 6 && section < 7),
-          [styles['page--close']]: !(section >= 6 && section < 7),
-        })}
-        >
-          <div className={styles.update}>
-            <div className={styles.update__title}>업데이트 예정 <span>01</span></div>
-            <div className={styles.phrase}>
-              <div>
-                앞으로 해야 하는 할 일들 그저 기록만 하고 계시진 않으신가요?{'\n'}
-                개개인 예상 소요시간을 <span>추정하고 실제 수행 시간과 대조하여 진정한 시간 관리를 할 수 있게끔 교정해</span> 드려요
+        {!isMobile && (
+        <>
+          <div className={cn({
+            [styles.page]: true,
+            [styles['page--column']]: true,
+            [styles['page--open']]: (section >= 6),
+          })}
+          >
+            <div className={styles.update}>
+              <div className={styles.update__title}>업데이트 예정 <span>01</span></div>
+              <div className={styles.phrase}>
+                <div>
+                  앞으로 해야 하는 할 일들 그저 기록만 하고 계시진 않으신가요?{'\n'}
+                  개개인 예상 소요시간을 <span>추정하고 실제 수행 시간과 대조하여 진정한 시간 관리를 할 수 있게끔 교정해</span> 드려요
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className={cn({
-          [styles.page]: true,
-          [styles['page--column']]: true,
-          [styles['page--open']]: (section >= 7 && section < 8),
-          [styles['page--close']]: !(section >= 7 && section < 8),
-        })}
-        >
-          <div className={styles.update}>
-            <div className={styles.update__title}>업데이트 예정 <span>01</span></div>
-            <div className={styles.phrase}>
-              <div>
-                앞으로 해야 하는 할 일들 그저 기록만 하고 계시진 않으신가요?{'\n'}
-                개개인 예상 소요시간을 <span>추정하고 실제 수행 시간과 대조하여 진정한 시간 관리를 할 수 있게끔 교정해</span> 드려요
+          <div className={cn({
+            [styles.page]: true,
+            [styles['page--column']]: true,
+            [styles['page--open']]: (section >= 7),
+          })}
+          >
+            <div className={styles.update}>
+              <div className={styles.update__title}>업데이트 예정 <span>01</span></div>
+              <div className={styles.phrase}>
+                <div>
+                  앞으로 해야 하는 할 일들 그저 기록만 하고 계시진 않으신가요?{'\n'}
+                  개개인 예상 소요시간을 <span>추정하고 실제 수행 시간과 대조하여 진정한 시간 관리를 할 수 있게끔 교정해</span> 드려요
+                </div>
+              </div>
+            </div>
+            <div className={styles.update} style={{ opacity: section >= 7 ? 1 : 0, transition: 'opacity 0.5s' }}>
+              <div className={styles.update__title}>업데이트 예정 <span>02</span></div>
+              <div className={styles.phrase}>
+                <div>
+                  일상의 순간이 담긴 사진 속<span>텍스트부터 시간, 장소, 이벤트 성격까지 분석한 후 자동으로 인식하여 사용자의 </span>{'\n'}
+                  <span>일정으로 등록</span>할 수 있어요.
+                </div>
               </div>
             </div>
           </div>
-          <div className={styles.update}>
-            <div className={styles.update__title}>업데이트 예정 <span>02</span></div>
-            <div className={styles.phrase}>
-              <div>
-                일상의 순간이 담긴 사진 속<span>텍스트부터 시간, 장소, 이벤트 성격까지 분석한 후 자동으로 인식하여 사용자의 </span>{'\n'}
-                <span>일정으로 등록</span>할 수 있어요.
-              </div>
-            </div>
-          </div>
-        </div>
+        </>
+        )}
       </div>
     </div>
   );

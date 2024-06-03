@@ -4,6 +4,7 @@
   "rules": {
     "selector-class-pattern": null,
     "color-hex-length": null,
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "scss/no-global-function-names":null
   }
 }

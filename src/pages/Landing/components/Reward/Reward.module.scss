@@ -1,10 +1,15 @@
+@use "/src/utils/style/mediaQuery.scss" as media;
+
 .template {
-  position: fixed;
   width: 100%;
   height: 100vh;
   padding-top: 70px;
   box-sizing: border-box;
   background-color: #ffffff;
+
+  @include media.media-breakpoint(mobile) {
+    height: 100%;
+  }
 }
 
 .first {
@@ -13,7 +18,14 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  z-index: 1;
+
+  @include media.media-breakpoint(mobile) {
+    width: 90%;
+    padding-top: 0;
+    box-sizing: border-box;
+    align-items: center;
+    margin: 0 auto;
+  }
 
   &__block {
     display: flex;
@@ -21,6 +33,12 @@
     padding-top: 40px;
     border-top: 1px solid;
     gap: 30px;
+
+    @include media.media-breakpoint(mobile) {
+      width: 95%;
+      flex-direction: column;
+      margin-top: 40px;
+    }
   }
 }
 
@@ -30,21 +48,42 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 0;
 }
 
 .title {
-  font-size: 116px;
+  font-size: 100px;
   font-weight: 500;
-  white-space: pre;
-  word-break: break-all;
+  white-space: pre-wrap;
+  word-break: keep-all;
   text-align: right;
+  margin-bottom: 20px;
+
+  @include media.media-breakpoint(1450px) {
+    font-size: 85px;
+  }
+
+  @include media.media-breakpoint(tablet) {
+    font-size: 80px;
+  }
+
+  @include media.media-breakpoint(mobile) {
+    display: none;
+  }
 }
 
 .subTitle {
   font-size: 24px;
   font-weight: 500;
   text-align: right;
+  white-space: pre-wrap;
+  word-break: keep-all;
+
+  @include media.media-breakpoint(mobile) {
+    width: 100%;
+    line-height: 140%;
+    text-align: left;
+    font-size: 26px;
+  }
 }
 
 .block {
@@ -55,6 +94,10 @@
   &__title {
     font-size: 30px;
     font-weight: 700;
+
+    @include media.media-breakpoint(mobile) {
+      font-size: 28px;
+    }
   }
 
   &__text {
@@ -63,6 +106,11 @@
     letter-spacing: -2%;
     color: #4b4b4d;
     white-space: pre;
+
+    @include media.media-breakpoint(mobile) {
+      font-size: 14px;
+      white-space: pre-wrap;
+    }
   }
 }
 
@@ -73,8 +121,16 @@
   padding: 100px 0;
   flex-shrink: 0;
 
+  @include media.media-breakpoint(mobile) {
+    padding: 100px 10px;
+  }
+
   & + & {
     border-top: 1px solid #d7d8db;
+
+    @include media.media-breakpoint(mobile) {
+      border-top: none;
+    }
   }
 
   &__title {
@@ -87,6 +143,10 @@
     white-space: pre;
     flex-shrink: 0;
     gap: 30px;
+
+    @include media.media-breakpoint(mobile) {
+      font-size: 24px;
+    }
   }
 
   &__regist {
@@ -99,6 +159,11 @@
     background-color: #fff;
     padding: 0;
     cursor: pointer;
+
+    @include media.media-breakpoint(mobile) {
+      width: 100%;
+      margin-top: 50px;
+    }
 
     &--text {
       flex: 1 0;
@@ -137,6 +202,12 @@
     padding: 10px 0;
     box-sizing: border-box;
     flex-shrink: 0;
+    font-size: 16px;
+
+    @include media.media-breakpoint(mobile) {
+      width: 100%;
+      padding: 20px 0;
+    }
 
     &::after {
       position: absolute;
@@ -176,6 +247,26 @@
     padding-left: 20px;
     font-size: 16px;
     color: #4b4b4d;
+
+    @include media.media-breakpoint(mobile) {
+      width: 100%;
+      padding-left: 0;
+      padding-top: 20px;
+      border-left: none;
+      border-top: 1px solid #d7d8db;
+      align-items: center;
+    }
+
+    div {
+      font-size: 16px;
+    }
+
+    &--mobile {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
     &--summary {
       display: flex;

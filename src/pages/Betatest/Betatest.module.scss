@@ -3,73 +3,62 @@
   padding: 0;
   box-sizing: border-box;
   font-size: 18px;
-
 }
 
-@media screen and (min-width: 1024px) {
-  /* 타블렛 */
-  * {
-    font-size: 13px;
-  }
-  .container{
-    padding: calc(20px + (100 - 20) * ((100vw - 1024px) / (1920 - 1024))) calc(20px + (230 - 20) * ((100vw - 1024px) / (1920 - 1024)));
-    
-    .descContainer{
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
-}
-
-
-
-@media screen and (max-width: 1024px) {
-  /* 타블렛 */
-  * {
-    font-size: 13px;
-  }
-  .container{
-    padding:20px;
-
-    .descContainer{
-    justify-content: space-between;
-    align-items: center;
-  }
-
- 
-    
-  }
- 
-
-}
-@media screen and (max-width: 1055px) {
+@media screen and (width >= 1024px) {
   /* 타블렛 */
   * {
     font-size: 13px;
   }
 
-  .container{
+  .container {
+    padding: calc(20px + (100 - 20) * ((100vw - 1024px) / (1920 - 1024)))
+      calc(20px + (230 - 20) * ((100vw - 1024px) / (1920 - 1024)));
 
-    .descContainer{
-   
-    justify-content: center;
-    align-items: center;
-    gap:32px;
-    
-      }
+    .descContainer {
+      justify-content: space-between;
+      align-items: center;
+    }
   }
-
 }
 
-@media screen and (max-width: 375px) {
-  
+@media screen and (width <= 1024px) {
+  /* 타블렛 */
+  * {
+    font-size: 13px;
+  }
+
+  .container {
+    padding: 20px;
+
+    .descContainer {
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+@media screen and (width <= 1055px) {
+  /* 타블렛 */
+  * {
+    font-size: 13px;
+  }
+
+  .container {
+    .descContainer {
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+    }
+  }
+}
+
+@media screen and (width <= 375px) {
   * {
     font-size: 8px;
   }
 
-  .container{
-
+  .container {
     .backNav {
       display: block !important;
       position: absolute;
@@ -80,39 +69,28 @@
       cursor: pointer;
     }
 
-    .descContainer{
-    justify-content: center;
-    align-items: center;
-    gap:32px;
-    
+    .descContainer {
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .contentsWrapper {
+      .mainContents {
+        text-align: center !important;
       }
 
-    .contentsWrapper{
-      
-      .mainContents{
+      .mainContents2 {
         text-align: center !important;
-      }
-      .mainContents2{
-        text-align: center !important;
-       
-      
       }
     }
-    .registerFormContainer{
-     
-    
-  
-      .input{
-        width:100% !important;
+    .registerFormContainer {
+      .input {
+        width: 100% !important;
       }
     }
   }
-  
-
 }
-
-
-
 
 .container {
   width: 100%;
@@ -131,16 +109,18 @@
     .mainContents {
       text-align: end;
       margin-bottom: 60px;
-      
+
       h1 {
         font-weight: 700;
         font-size: 4rem;
       }
+
       .lineBreak {
         font-weight: 700;
         font-size: 4rem;
       }
     }
+
     .mainContents2 {
       h1 {
         font-weight: 700;
@@ -155,31 +135,32 @@
     display: flex;
     padding-top: 3rem;
     flex-wrap: wrap;
-    align-items: center; 
+    align-items: center;
     gap: 3rem;
     margin-bottom: 5rem;
-    
 
     .descWrapper {
-
       .betaActiveWrapper {
-        width:100%;
+        width: 100%;
 
         .header {
-        font-weight: 700;
-        margin-bottom: 1.2rem;
-        span{
-          font-size: 1.6rem;
-        }
-      }   
+          font-weight: 700;
+          margin-bottom: 1.2rem;
 
-        .contentsWrapper { 
+          span {
+            font-size: 1.6rem;
+          }
+        }
+
+        .contentsWrapper {
           display: flex;
           gap: 0.5rem;
+
           span {
             font-size: 1.5rem;
           }
         }
+
         .activeWrapper {
           width: 100%;
           display: flex;
@@ -188,9 +169,9 @@
           gap: 0.5rem;
         }
       }
+
       .betaBenefitsWrapper {
         .header {
-          
           font-weight: 700;
           margin-bottom: 1rem;
           font-size: 1.6rem;
@@ -212,46 +193,41 @@
     }
   }
 
-  .errormessage{
-    color:red;
-    font-size:1rem;
+  .errormessage {
+    color: red;
+    font-size: 1rem;
   }
 
   .registerFormContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    .header{
-      font-size: 1.7rem;
-    }
-    
+
     .inputsForm {
       display: flex;
-      width:100%;
+      width: 100%;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      
     }
 
     .header {
-          display: flex;
-          justify-content: center;
-          width:100%;
-          
-          font-weight: 700;
-          margin-bottom: 1rem;
-          
-          max-width:290px;
-          span{
-              text-align: start;
-              
-              font-size: 1.2rem;
-          }
-        }
+      display: flex;
+      justify-content: start;
+      width: 100%;
+
+      font-weight: 700;
+      margin-bottom: 1rem;
+
+      max-width: 290px;
+      span {
+        text-align: start;
+
+        font-size: 1.2rem;
+      }
+    }
 
     .input {
-    
       text-align: center;
       width: 34rem;
       max-width: 100%;
@@ -261,10 +237,12 @@
       border: 1px solid rgb(54, 53, 53);
       font-size: 24px;
     }
+
     .error {
       border-color: red;
       font-size: 24px;
     }
+
     .checkoxWrapper {
       display: flex;
       gap: 1rem;
@@ -308,134 +286,104 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   * {
     font-size: 7px;
   }
+
   .container {
-    padding: 60px 30px 30px 30px;
+    padding: 60px 30px 30px;
     position: relative;
+
     .diver {
       display: none;
     }
 
-
     .contentsWrapper {
       height: 15%;
-      padding: 0;
 
       .mainContents {
-        padding-left: 10px;
-        padding-right: 10px;
-        position: relative; 
-        margin-bottom: 20px;
-       
+        padding-left: 3px;
+        padding-right: 3px;
 
-        &::before,
-        &::after {
-          content: '';
-          position: absolute;
-          top: 20px;
-          transform: translateY(-50%); 
-          width: 2px;
-          height: 34px;
-          background-color: black;
-        }
-
-        &::before {
-          left: 0; 
-        }
-
-        &::after {
-          right: 0px;
-        }
-
+        margin-bottom: 10px;
+        border-left: 2px solid black;
+        border-right: 2px solid black;
       }
-
-
-
       .mainContents2 {
         text-align: start;
         padding-left: 2rem;
-      
+
         h1 {
           font-weight: 700;
-          
         }
       }
     }
-    .descWrapper{
-        height: 160px;
-        margin-bottom: 6rem;
-      }
-
+    .descWrapper {
+      height: 160px;
+      margin-bottom: 6rem;
+    }
     .descContainer {
       height: auto;
-      display: block; 
+      display: block;
     }
 
     .betaActiveWrapper {
-      width:100%;
-      height: auto;
-      padding: 30px  2.7rem 18px 2.7rem;
+      width: 100%;
+      height: 100%;
+
+      padding: 30px 2.7rem;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
       border-radius: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap:10px;
+      gap: 10px;
 
-      .header{
+      .header {
         max-width: 330px;
         min-width: auto;
         font-size: 3rem;
-        span{
+
+        span {
           font-size: 2rem !important;
         }
       }
-      .contentsWrapper{
+
+      .contentsWrapper {
         max-width: 330px;
         min-width: auto;
-        span{
+
+        span {
           font-size: 1.8rem !important;
         }
       }
-      .activeWrapper{
-        display: flex;
-        justify-content: center;
-        align-items: center; 
+
+      .activeWrapper {
+        .activeWrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-items: center;
+        }
+      }
+      .registerFormContainer {
+        margin-bottom: 5rem;
+
+        .header {
+          display: none;
+        }
+
+        .input {
+          width: 60%;
+          height: 6rem;
+          font-size: 14px;
+        }
       }
     }
-    .registerFormContainer {
-      margin-bottom: 5rem;
-      .header {
-        display: none;
-      }
-      .input {
-        width: 60%;
-        height: 6rem;
-        font-size: 14px;
-      }
+
+    .betaBenefitsWrapper {
+      display: none;
     }
   }
-  .betaBenefitsWrapper {
-    display: none;
-  }
-
-  .buttonWrapper{
-    height: 4rem !important;
-    
-  .errormessage{
-    color:red;
-    font-size:1.5rem;
-  }
-
-    .button{
-      width:27rem !important;
-      font-size: 2.3rem !important;
-      
-    }
-  }
-
-
 }
