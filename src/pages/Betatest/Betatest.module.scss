@@ -19,10 +19,15 @@
       justify-content: space-between;
       align-items: center;
     }
+
+      .input{
+      width:34rem !important;
+      height: 40px !important;
+      }
   }
 }
 
-@media screen and (width <= 1024px) {
+@media screen and ( 768px <width <= 1024px) {
   /* 타블렛 */
   * {
     font-size: 13px;
@@ -36,6 +41,11 @@
       align-items: center;
     }
   }
+
+    .input{
+      width:34rem !important;
+      height: 40px ;
+      }
 }
 
 @media screen and (width <= 1055px) {
@@ -50,7 +60,7 @@
       align-items: center;
       gap: 32px;
     }
-  }
+  } 
 }
 
 @media screen and (width <= 375px) {
@@ -84,9 +94,19 @@
         text-align: center !important;
       }
     }
+
     .registerFormContainer {
+      .header{
+        display: flex;
+        justify-content: center !important;
+        align-items: center;
+        font-size: 1.7rem;
+      }
+      
       .input {
         width: 100% !important;
+        height: 40px !important;
+        font-size: 14px !important;
       }
     }
   }
@@ -95,6 +115,7 @@
 .container {
   width: 100%;
   height: auto;
+
   .backNav {
     display: none;
   }
@@ -131,7 +152,7 @@
 
   .descContainer {
     width: 100%;
-    height: 60%;
+    height: 60% ;
     display: flex;
     padding-top: 3rem;
     flex-wrap: wrap;
@@ -195,7 +216,7 @@
 
   .errormessage {
     color: red;
-    font-size: 1rem;
+    font-size: 10px;
   }
 
   .registerFormContainer {
@@ -209,33 +230,36 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
+
+      .input{
+        height: 40px;
+        width:60% ;
+        font-size: 14px;
+      }
     }
 
     .header {
       display: flex;
-      justify-content: start;
+      justify-content: center;
       width: 100%;
-
+      font-size: 1.7rem;
       font-weight: 700;
       margin-bottom: 1rem;
-
       max-width: 290px;
-      span {
-        text-align: start;
 
-        font-size: 1.2rem;
+      span {
+      text-align: start;
+      font-size: 1.2rem;
       }
     }
 
     .input {
       text-align: center;
-      width: 34rem;
       max-width: 100%;
-      height: 3.4rem;
+      height: 40px !important;
       border-radius: 30px;
       margin-bottom: 1.8rem;
-      border: 1px solid rgb(54, 53, 53);
-      font-size: 24px;
+      border: 1px solid #363535;
     }
 
     .error {
@@ -294,6 +318,7 @@
   .container {
     padding: 60px 30px 30px;
     position: relative;
+   
 
     .diver {
       display: none;
@@ -303,13 +328,31 @@
       height: 15%;
 
       .mainContents {
+        position: relative;
         padding-left: 3px;
         padding-right: 3px;
-
         margin-bottom: 10px;
-        border-left: 2px solid black;
-        border-right: 2px solid black;
+
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            top: 20px; 
+            transform: translateY(-50%);
+            width: 2px;
+            height: 34px;
+            background-color: black;
+          }
+
+          &::before {
+            left: -20px;
+          }
+
+          &::after {
+            right: -20px; 
+          }
       }
+
       .mainContents2 {
         text-align: start;
         padding-left: 2rem;
@@ -319,10 +362,12 @@
         }
       }
     }
+
     .descWrapper {
       height: 160px;
       margin-bottom: 6rem;
     }
+
     .descContainer {
       height: auto;
       display: block;
@@ -331,9 +376,8 @@
     .betaActiveWrapper {
       width: 100%;
       height: 100%;
-
       padding: 30px 2.7rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 20%);
       border-radius: 10px;
       display: flex;
       flex-direction: column;
@@ -353,6 +397,7 @@
       .contentsWrapper {
         max-width: 330px;
         min-width: auto;
+        
 
         span {
           font-size: 1.8rem !important;
@@ -361,29 +406,39 @@
 
       .activeWrapper {
         .activeWrapper {
+          background-color: yellow !important;
           display: flex;
           justify-content: center;
           align-items: center;
-          align-items: center;
+          
         }
       }
+
+
       .registerFormContainer {
         margin-bottom: 5rem;
-
-        .header {
-          display: none;
-        }
-
+        display: flex;
+      flex-direction: column;
+      align-items: center;
+        
         .input {
-          width: 60%;
-          height: 6rem;
-          font-size: 14px;
+          width: 60% ;
+          height: 40px !important;
+          font-size: 14px !important;
         }
       }
     }
 
     .betaBenefitsWrapper {
       display: none;
+    }
+
+    .buttonWrapper{
+      .button{
+        width:22rem;
+        height: 40px;
+        font-size: 14px;
+      }
     }
   }
 }

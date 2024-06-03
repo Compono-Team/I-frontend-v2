@@ -20,7 +20,6 @@ export default function FirstPage() {
             AXYZ is Your Own{'\n'} Time Management Copilot
           </div>
         </div>
-
         <div className={styles.bottom}>
           <button
             className={styles.assign}

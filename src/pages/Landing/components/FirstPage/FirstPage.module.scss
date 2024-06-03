@@ -112,7 +112,11 @@
   box-sizing: border-box;
   gap: 10px;
   cursor: pointer;
-  z-index: 500;
+  z-index: 500; 
+  
+  button{
+    z-index: 500; 
+  }
 
   svg {
     width: 28px;
