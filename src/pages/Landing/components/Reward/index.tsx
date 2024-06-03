@@ -84,7 +84,6 @@ function RewardSecond() {
             {!isMobile
             && (
             <button
-              onClick={handleClick}
               className={styles.recommend__regist}
               type="button"
             >
