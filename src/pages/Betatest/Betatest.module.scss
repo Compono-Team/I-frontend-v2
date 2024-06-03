@@ -360,29 +360,30 @@
       }
 
       .activeWrapper {
-      .activeWrapper{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-items: center; 
+        .activeWrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-items: center;
+        }
+      }
+      .registerFormContainer {
+        margin-bottom: 5rem;
+
+        .header {
+          display: none;
+        }
+
+        .input {
+          width: 60%;
+          height: 6rem;
+          font-size: 14px;
+        }
       }
     }
-    .registerFormContainer {
-      margin-bottom: 5rem;
 
-      .header {
-        display: none;
-      }
-
-      .input {
-        width: 60%;
-        height: 6rem;
-        font-size: 14px;
-      }
+    .betaBenefitsWrapper {
+      display: none;
     }
-  }
-
-  .betaBenefitsWrapper {
-    display: none;
   }
 }
