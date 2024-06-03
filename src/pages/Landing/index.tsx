@@ -11,14 +11,20 @@ import Reward from './components/Reward';
 import styles from './Landing.module.scss';
 
 export default function Landing() {
+  const [headerVisible, setHeaderVisible] = useState(true);
   const [section, setSection] = useState(0);
 
   const navigate = useNavigate();
 
   useEffect(() => {
+    let timeOut:NodeJS.Timeout;
     const handleScroll = () => {
+      clearTimeout(timeOut);
+      setHeaderVisible(false);
       setSection(Math.round((window.scrollY / window.innerHeight) * 100) / 100);
+      timeOut = setTimeout(() => setHeaderVisible(true), 2000);
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -34,6 +40,7 @@ export default function Landing() {
       <div className={cn({
         [styles.header]: true,
         [styles['header--visible']]: section >= 1,
+        [styles['header--hidden']]: !headerVisible,
       })}
       >
         <div className={styles.header__logo}>

@@ -79,6 +79,7 @@
   word-break: keep-all;
 
   @include media.media-breakpoint(mobile) {
+    width: 100%;
     line-height: 140%;
     text-align: left;
     font-size: 26px;

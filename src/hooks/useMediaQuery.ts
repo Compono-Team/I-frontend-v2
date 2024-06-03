@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-const MOBILE_QUERY = '(max-width: 576px)';
+const MOBILE_QUERY = '(max-width: 768px)';
 
 export default function useMediaQuery(query = MOBILE_QUERY): boolean {
   const getMatches = (matchedQuery: string): boolean => {
