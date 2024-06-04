@@ -111,17 +111,15 @@
   padding: 18px 24px;
   box-sizing: border-box;
   gap: 10px;
+  position: relative;
   cursor: pointer;
   z-index: 500; 
-  
-  button{
-    z-index: 500; 
-  }
 
   svg {
     width: 28px;
     height: 28px;
     fill: #ffffff;
+    z-index: 500; 
   }
 }
 
